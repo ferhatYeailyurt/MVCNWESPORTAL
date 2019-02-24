@@ -1,0 +1,44 @@
+﻿@model HaberSistemi.Data.Model.Kategori
+
+@{
+    ViewBag.Title = "Kategori Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <!-- Basic form -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <header class="panel-heading">@ViewBag.Title</header>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Üst Kategori</label>
+                            @Html.DropDownListFor(model => model.KategoriAdi, new SelectList(ViewBag.Kategori, "Id", "KategoriAdi"),("Seçiniz") ,new { @class = "form-control", id="ParentId" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Kategorı Adı</label>
+                            <input type="text" class="form-control" id="KategoriAdi" placeholder="Kategori Adı" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Kategori URL</label>
+                            <input type="text" class="form-control" id="KategoriUrl" placeholder="URL" required>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked id="KategoriAktif" name="AktifMi"> Aktif mi ?
+                            </label>
+                        </div>
+                        <a href="#" class="btn btn-success" onclick="KategoriEkle();">Kaydet</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

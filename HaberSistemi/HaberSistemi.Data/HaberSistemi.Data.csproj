@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAB1B934-99B1-421A-BC70-E36D07E07FC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HaberSistemi.Data</RootNamespace>
+    <AssemblyName>HaberSistemi.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContext\HaberContext.cs" />
+    <Compile Include="Migrations\201902230950380_Olustur.cs" />
+    <Compile Include="Migrations\201902230950380_Olustur.Designer.cs">
+      <DependentUpon>201902230950380_Olustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902231029242_Olustur1.cs" />
+    <Compile Include="Migrations\201902231029242_Olustur1.Designer.cs">
+      <DependentUpon>201902231029242_Olustur1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902231725462_Olustur2.cs" />
+    <Compile Include="Migrations\201902231725462_Olustur2.Designer.cs">
+      <DependentUpon>201902231725462_Olustur2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902231726225_Olustur3.cs" />
+    <Compile Include="Migrations\201902231726225_Olustur3.Designer.cs">
+      <DependentUpon>201902231726225_Olustur3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902232134220_Olustur4.cs" />
+    <Compile Include="Migrations\201902232134220_Olustur4.Designer.cs">
+      <DependentUpon>201902232134220_Olustur4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902232152368_Olustur5.cs" />
+    <Compile Include="Migrations\201902232152368_Olustur5.Designer.cs">
+      <DependentUpon>201902232152368_Olustur5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902241537492_Olustur6.cs" />
+    <Compile Include="Migrations\201902241537492_Olustur6.Designer.cs">
+      <DependentUpon>201902241537492_Olustur6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902241557192_Olustur7.cs" />
+    <Compile Include="Migrations\201902241557192_Olustur7.Designer.cs">
+      <DependentUpon>201902241557192_Olustur7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902241748265_Olustur8.cs" />
+    <Compile Include="Migrations\201902241748265_Olustur8.Designer.cs">
+      <DependentUpon>201902241748265_Olustur8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Haber.cs" />
+    <Compile Include="Model\Kategori.cs" />
+    <Compile Include="Model\Kullanici.cs" />
+    <Compile Include="Model\Resim.cs" />
+    <Compile Include="Model\Rol.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201902230950380_Olustur.resx">
+      <DependentUpon>201902230950380_Olustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902231029242_Olustur1.resx">
+      <DependentUpon>201902231029242_Olustur1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902231725462_Olustur2.resx">
+      <DependentUpon>201902231725462_Olustur2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902231726225_Olustur3.resx">
+      <DependentUpon>201902231726225_Olustur3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902232134220_Olustur4.resx">
+      <DependentUpon>201902232134220_Olustur4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902232152368_Olustur5.resx">
+      <DependentUpon>201902232152368_Olustur5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902241537492_Olustur6.resx">
+      <DependentUpon>201902241537492_Olustur6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902241557192_Olustur7.resx">
+      <DependentUpon>201902241557192_Olustur7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902241748265_Olustur8.resx">
+      <DependentUpon>201902241748265_Olustur8.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

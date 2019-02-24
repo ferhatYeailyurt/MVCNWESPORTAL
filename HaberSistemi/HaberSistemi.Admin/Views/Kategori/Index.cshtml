@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HaberSistemi.Data.Model.Kategori>
+@{
+    ViewBag.Title = "Kategori Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <!-- Responsive table -->
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <header class="panel-heading">@ViewBag.Title</header>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Kategori Adı</th>
+                                <th>ÜstKategori</th>
+                                <th>Durum</th>
+                                <th>Ekleyen</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td><span class="label label-success">@item.Id</span></td>
+                                    <td>@item.KategoriAdi</td>
+                                    <td>@item.ParentId</td>
+                                    <td>
+                                        @if (item.AktifMi == true)
+                                        {
+                                            <b class="label label-success">Aktif</b>
+                                        }
+                                        else
+                                        {
+                                            <b class="label alert-danger">Pasif</b>
+                                        }</td>
+                                    <td><a href="#">@item.Kullanici.AdSoyad</a></td>
+                                    <td>
+                                        <button class="btn btn-default btn-sm">Düzenle</button>
+                                        @*<button class="btn btn-default btn-sm">Delete</button>*@
+                                        @Html.ActionLink("Sil","Sil",new {ID=item.Id}, new {onclick="return confirm('Kaydı silmek istediğinize emin misiniz?')" })
+                                    </td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
